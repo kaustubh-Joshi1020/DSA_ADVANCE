@@ -12,64 +12,54 @@ public class queue_using_array {
     }
 
     public boolean isempty(){
-        if (rear == -1){
-            return true;
-        }
-        return false;
-    }
-    public boolean isfull(){
-        return rear == size-1;
+        return rear == -1;
     }
 
-    public void enqueue(int data){
-        if(isfull()){
-            System.out.println("the queue is full");
+    public void add(int data){
+        if (rear == size-1){
+            System.out.println("queue is full");
             return;
         }
         rear++;
         arr[rear] = data;
     }
 
-    public int dequeue(){
-        if (isempty()) {
+    public int remove(){
+        if(rear == -1){
             System.out.println("queue is empty");
             return -1;
         }
         int removed = arr[0];
-        for (int i = 1; i < rear; i++) {
-            arr[i-1] = arr[i];
+        for (int i = 0; i < rear; i++) {
+            arr[i] = arr[i+1];
         }
         rear--;
         return removed;
     }
 
-
     public void display(){
-        if (isempty()){
+        if(rear == -1){
             System.out.println("queue is empty");
             return;
         }
-        for (int i = 0; i < rear; i++) {
+        for (int i = 0; i < rear+1; i++) {
             System.out.print(arr[i] + "<-");
         }
         System.out.println("end");
-//        System.out.println(Arrays.toString(arr));
-        rear--;
+    }
+
+    public int peek(){
+        return arr[0];
     }
 
     public static void main(String[] args) {
-        queue_using_array q = new queue_using_array(5);
-        q.enqueue(1);
-        q.enqueue(2);
-        q.enqueue(3);
-        q.enqueue(4);
-        q.enqueue(5);
-        q.display();
-//        q.dequeue();
-//        q.display();
-//        q.dequeue();
-//        q.display();
-
+       queue_using_array q = new queue_using_array(5);
+       q.add(1);
+       q.add(2);
+       q.add(3);
+       q.add(4);
+       q.add(5);
+      q.display();
     }
 
 }

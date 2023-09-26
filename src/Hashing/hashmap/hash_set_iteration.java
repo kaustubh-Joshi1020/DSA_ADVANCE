@@ -14,7 +14,7 @@ public class hash_set_iteration {
         set.add("sahil");
 
         // iteration with Iterator
-        Iterator itr = set.iterator();
+//        Iterator itr = set.iterator();
 
 //        while (itr.hasNext()){
 //            System.out.println(itr.next());

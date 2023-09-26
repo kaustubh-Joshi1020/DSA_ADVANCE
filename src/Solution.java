@@ -14,8 +14,8 @@ class Solution {
         if(arr3.length%2==0){
             double mid1 = arr3[arr3.length/2];
             double mid2 = arr3[(arr3.length/2)-1];
-            double mid3 = (mid1 + mid2)/2;
-            return mid3;
+            return  (mid1 + mid2)/2;
+            
         }
 
         return (double) arr3[arr3.length/2];
